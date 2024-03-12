@@ -1,16 +1,22 @@
 // import { Fragment } from "react";
-import { MouseEvent } from "react";
+import { useState } from "react";
 
 //pascal case - class name
 function ListGroup() {
   let items = ["New ", "San ", "Colo", "Paris"];
-  //   items = [];
+  //   //   items = [];
+  //   let selectedIndex = 0;
 
+  //Hook
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
-  // here in TS we can get not only type safety also the suggestions, Also inside the return it identify the type. but here I have understand the type 
-  const handleClick = (event:MouseEvent) => {
-    console.log(event);
-  };
+  //   arr[0]  //variable selectedIndex
+  //   arr[1]  // updater
+
+  // here in TS we can get not only type safety also the suggestions, Also inside the return it identify the type. but here I have understand the type
+  //   const handleClick = (event: MouseEvent) => {
+  //     console.log(event);
+  //   };
 
   //conditional rendering but bellow is not a good practice
 
@@ -33,11 +39,17 @@ function ListGroup() {
       <ul className="list-group">
         {items.map((item, index) => (
           <li
-            className="list-group-item"
+            className={
+              index === selectedIndex
+                ? "list-group-item active"
+                : "list-group-item "
+            }
             key={item}
+            onClick={() => setSelectedIndex(index)}
+
             // onClick={}
 
-            onClick={handleClick} 
+            // onClick={handleClick}
 
             // onClick={() => {
             //     console.log(item, index);
