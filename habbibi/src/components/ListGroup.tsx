@@ -1,5 +1,5 @@
 // import { Fragment } from "react";
-import { useState } from "react";
+import { useState } from "react"; // build in function in react to idenftify this  component has data or state that can change by time
 
 //pascal case - class name
 function ListGroup() {
