@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="m-5">
-      <Button color="secondary" onClick={log}>
+      <Button  onClick={log}>
         My Button
       </Button>
     </div>
