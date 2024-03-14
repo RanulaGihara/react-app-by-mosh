@@ -1,12 +1,16 @@
+import { Button } from "./components/Button";
 import ListGroup from "./components/ListGroup";
-import Alert from "./components/alert";
 
 function App() {
+  const log = () => {
+    console.log("hii");
+  };
+
   return (
-    <div>
-      <Alert>
-        hello  <span>world</span>
-      </Alert>
+    <div className="m-5">
+      <Button color="secondary" onClick={log}>
+        My Button
+      </Button>
     </div>
   );
 }
